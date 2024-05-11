@@ -47,7 +47,8 @@ func TestMinimalTree(t *testing.T) {
 
 	foundId, depth := CheckDuplicateIDs(root)
 
-	assert.Equal(t, id, foundId)
+	assert.NotNil(t, foundId)
+	assert.Equal(t, id, *foundId)
 	assert.Equal(t, 1, depth)
 }
 
