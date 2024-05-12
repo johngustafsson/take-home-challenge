@@ -10,6 +10,7 @@ coverage
 
 # production
 build
+tree-search/testdata
 
 # misc
 .DS_Store

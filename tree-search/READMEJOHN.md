@@ -24,6 +24,8 @@ I wanted to avoid an O(n^2) brute force algorithm so I decided to go with a set 
 
 ## Tests
 
-Writing tests for the simplest cases before implementing the algorithm. Empty tree, only a root node, and finding a single duplicate at the bottom and finding the shallowest duplicate out of two possible ones.
+Wrote tests for the most simple cases before implementing the algorithm. Empty tree, only a root node, and finding a single duplicate at the bottom and finding the shallowest duplicate out of two possible ones.
 
-More testing to harden the code will follow when the basic algorithm passes.
+Created a simple tree generator, pretty quick and dirty, to be able to test more trees to increase the confidence that the algorithm is correct. For a real project it's very useful to have robust generators with a decent set of options for how to create test data. It's difficult to hand write and image larger test sets. Not to mention humans generally are poor random generators. Another approach can be to build a generator that writes to disk, and use those for future testing. Similar to how it's useful to have a sample size of real life data to test on.
+
+Testing could also be expanded upon with benchmark and fuzz tests, since go supports both of those.

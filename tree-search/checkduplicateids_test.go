@@ -122,3 +122,24 @@ func TestMediumTree(t *testing.T) {
 	assert.Equal(t, 5, *foundId)
 	assert.Equal(t, 2, depth)
 }
+
+// Testing pseudo random trees of sizes from 0 to 999
+//
+// Using a generator help generate trees, and provide a target and a target depth
+func TestLargeTree(t *testing.T) {
+	for length := 0; length < 1000; length++ {
+		g := makeGenerator(length)
+		root, target, targetDepth := g.makeTree()
+
+		found, depth := CheckDuplicateIDs(root)
+
+		if target == nil {
+			assert.Nil(t, found)
+			assert.Zero(t, depth)
+		} else {
+			assert.NotNil(t, found)
+			assert.Equal(t, target, found)
+			assert.Equal(t, targetDepth, depth)
+		}
+	}
+}
